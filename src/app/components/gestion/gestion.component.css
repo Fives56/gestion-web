@@ -1,0 +1,28 @@
+.nav-bar {
+  background-color:#48e;
+  padding: 0.7em;
+  z-index: 10;
+  position: fixed;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+.title{
+  font-size: 2em;
+  color: #fff;
+  margin: auto 2em auto 0.3em;
+}
+button {
+  margin-left: 1em;
+}
+
+.active {
+  background-color: #F9A825;
+}
+
+main{
+  padding-top: 64px;
+}
+
+.divider{
+  flex:auto
+}
