@@ -1,9 +1,12 @@
 .nav-bar {
-  background-color:#48e;
+  background-color:#675cb0;
   padding: 0.7em;
   z-index: 10;
   position: fixed;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  top: 1px;
+  left: 1px;
+  width: 100%;
+  box-shadow: 0 2px 5px #171a4a;
 }
 
 .title{
@@ -13,10 +16,6 @@
 }
 button {
   margin-left: 1em;
-}
-
-.active {
-  background-color: #F9A825;
 }
 
 main{

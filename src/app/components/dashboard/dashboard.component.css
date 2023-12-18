@@ -7,6 +7,7 @@
     z-index: 15;
     top: .5em;
     right: 5em; 
+    color: #000;
 }
 
 .banner{
@@ -15,9 +16,9 @@
     margin: 0 auto;
     display: flex;
     padding: 1em 10em 0;
-    border-bottom: 2px;
+    border-bottom: 4px;
     border-bottom-style: solid;
-    border-bottom-color: #48e;
+    border-bottom-color: #9f90ea;
     user-select: none;
     justify-content: center;
 }
@@ -25,32 +26,21 @@
 .content{
     display: flex;
     flex-direction: column;
-   align-items: center;
+    align-items: center;
+    justify-items: center;
 }
 
 .months-container{
-    margin: 1em;
-    height: max-content;
     width: 50%;
-    padding: .5em;
+    padding: 20;
     overflow-x: auto;
+    overflow-y: hidden;
     display: flex;
     border: none;
-    border-bottom: 2px solid #48e;
+    border-bottom: 4px solid #9f90ea;
+
 }
 
-.Month{
-    background-color: #5d9eff51;
-    padding: 2em;
-    width: 25%;
-    margin: .5em 1em;
-    user-select: none;
-    border: 1px inset #9995;
-    border-radius: 10px;
-    box-shadow: 2px 5px 10px #9997;
-}
-
-.Month:hover{
-    background-color: #5d9eff71;
-    box-shadow: 2px 5px 5px #aaa;
+.item-container{
+    display: grid;
 }

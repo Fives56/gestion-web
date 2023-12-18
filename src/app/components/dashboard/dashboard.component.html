@@ -5,26 +5,23 @@
 
 <mat-toolbar class="banner">
     <h2>
-      Dashboard
+        Dashboard
     </h2>
- </mat-toolbar>
-  
+</mat-toolbar>
+
 <div class="content">
-    
+
     <!-- Months container -->
     <div class="months-container">
-
-        <mat-card-content class="Month">
-            <mat-card-title>
-                Septiembre
-            </mat-card-title>
-        </mat-card-content>
-
+        <app-pie-chart [months]="months"></app-pie-chart>
     </div>
 
+    <div class="cards-container">
+        <app-dashboard-num-card-chart [sales]="sales" [view]="view"></app-dashboard-num-card-chart>
+    </div>
 
     <div class="sales-day-container">
-        <button (click)="onClick()"> click here</button>
+        <button> click here</button>
     </div>
 
-</div>=
+</div>
