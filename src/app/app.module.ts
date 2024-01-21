@@ -11,8 +11,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { FormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { MatStepperModule } from '@angular/material/stepper';
+import {MatTableModule} from '@angular/material/table';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +31,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { PieChartComponent } from './components/dashboard/pie-chart/pie-chart.component';
 import { NgChartsModule } from 'ng2-charts';
 import { DashboardNumCardChartComponent } from './components/dashboard/dashboard-num-card-chart/dashboard-num-card-chart.component';
+import { SalesComponent } from './components/sales/sales.component';
+
+
 
 @NgModule({
   declarations: [
@@ -30,9 +41,16 @@ import { DashboardNumCardChartComponent } from './components/dashboard/dashboard
     DashboardComponent,
     GestionComponent,
     PieChartComponent,
-    DashboardNumCardChartComponent
+    DashboardNumCardChartComponent,
+    SalesComponent
   ],
   imports: [
+    MatTooltipModule,
+    MatGridListModule,
+    MatTableModule,
+    ReactiveFormsModule,
+    MatStepperModule,
+    MatSelectModule,
     BrowserModule,
     AppRoutingModule,
     MatToolbarModule,

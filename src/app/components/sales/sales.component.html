@@ -1,0 +1,104 @@
+<mat-stepper orientation="vertical" #stepper [linear]="linear" (selectionChange)="onSelectionChange($event)">
+    <!-- Sales -->
+    <mat-step [stepControl]="productForm" label="Seleccionar el producto" state="product">
+
+        <div class="container-all">
+            <div class="container-form">
+                <form class="container" [formGroup]="productForm">
+
+                    <mat-form-field>
+                        <mat-label>Producto</mat-label>
+                        <mat-select formControlName="product" required>
+                            <mat-option *ngFor="let product of products" [value]="product">{{product.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Cantidad</mat-label>
+                        <input matInput placeholder="0000000" type="number" required formControlName="quantity" min="1">
+                    </mat-form-field>
+                    <!-- Actions -->
+                    <div class="action-buttons">
+                        <button mat-raised-button color="primary" (click)="nextValidation()">
+                            Siguiente
+                        </button>
+                        <button mat-mini-fab color="primary" (click)="addProduct()" [disabled]="productForm.invalid">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- Editable sales -->
+            <div class="container-tickets">
+                <mat-card *ngFor="let product of ticket.products" class="product-card">
+                    <mat-card-header>
+                        <mat-card-title>{{ product.product.name }}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <p class="edited-quantity">Precio: {{ product.product.price }}</p>
+                        <form [formGroup]="productForm">
+                            <mat-form-field class="edited-quantity">
+                                <mat-label>Cantidad</mat-label>
+                                <input matInput type="number" min="1" [value]="product.quantity" (change)="updateTicket(product.product, $event, true)"
+                                    formControlName="edited">
+                            </mat-form-field>
+                        </form>
+                    </mat-card-content>
+                    <mat-card-footer class="footer-card">
+                        <button mat-mini-fab color="warn" (click)="delete(product)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+        </div>
+    </mat-step>
+
+    <!-- Ticket -->
+    <mat-step class="container" label="Ticket" state="ticket">
+        <h3 *ngIf="!ticket"> Ha ocurrido un Error</h3>
+        <mat-card class="card" *ngIf="!!ticket">
+            <mat-card-header>
+                <h2> Ticket </h2>
+            </mat-card-header>
+            <mat-card-content>
+
+                <table mat-table [dataSource]="dataSource" #table>
+                    <!-- Product -->
+                    <ng-container matColumnDef="producto" fxFlex="50">
+                        <th mat-header-cell *matHeaderCellDef> Producto </th>
+                        <td mat-cell *matCellDef="let element"> {{element.product.name}} </td>
+                    </ng-container>
+
+                    <!-- Price -->
+                    <ng-container matColumnDef="precio" fxFlex="50">
+                        <th mat-header-cell *matHeaderCellDef> Precio </th>
+                        <td mat-cell *matCellDef="let element"> {{element.product.price}} </td>
+                    </ng-container>
+
+                    <!-- Quantity -->
+                    <ng-container matColumnDef="cantidad" fxFlex="50">
+                        <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+                        <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </mat-card-content>
+            <!-- Actions -->
+            <mat-card-footer class="footer">
+                <h3>Total: <span>{{ticket.total}}</span></h3>
+
+                <div class="action-buttons">
+                    <button class="button" *ngIf="!!ticket" mat-raised-button color="primary"
+                        (click)="sell()">Vender</button>
+
+                    <button mat-raised-button color="primary" matStepperPrevious>
+                        Atrás
+                    </button>
+                </div>
+            </mat-card-footer>
+        </mat-card>
+    </mat-step>
+</mat-stepper>

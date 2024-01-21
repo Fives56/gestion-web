@@ -16,12 +16,10 @@
         <app-pie-chart [months]="months"></app-pie-chart>
     </div>
 
-    <div class="cards-container">
+    <!-- Cards Dayli-Sales -->
+    <h3 *ngIf="sales.length == 0"> No se han vendido productos hoy </h3>
+    <div class="cards-container" *ngIf="sales.length > 0">
         <app-dashboard-num-card-chart [sales]="sales" [view]="view"></app-dashboard-num-card-chart>
-    </div>
-
-    <div class="sales-day-container">
-        <button> click here</button>
     </div>
 
 </div>

@@ -1,0 +1,79 @@
+
+
+.container-all {
+  display: flex;
+}
+
+.container-form {
+  display: flex;
+  flex: 8;
+}
+
+.footer-card{
+  width: auto;
+  margin: auto;
+}
+
+.p {
+  margin-left: 20px;
+  width: max-content;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  margin: 5px;
+}
+
+.action-buttons {
+  display: flex;
+  margin: 0;
+  justify-content: space-around;
+}
+
+.action-buttons button {
+  align-self: center;
+}
+
+.card {
+  background-color: #678bff36;
+  width: 35%;
+  /* margin-bottom: 5px; */
+}
+
+.card-body {
+  overflow-y: auto;
+}
+
+table {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.footer {
+  margin: 10px;
+}
+
+.container-tickets {
+  flex: 3;
+  max-width: 30%;
+  overflow: auto;
+  display: flex; 
+  flex-wrap: nowrap;
+}
+
+.product-card{
+  flex: 0 0 auto; 
+  margin: 1%;
+  width: 150px;
+}
+
+.edited-quantity {
+  width: 85%;
+  padding: 0;
+}

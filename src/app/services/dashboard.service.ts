@@ -16,7 +16,6 @@ export class DashboardService {
   }
 
   getSalesToday(){
-   
     return this.http.get<any[]>('http://localhost:3000/product/sales',)
   }
 }
