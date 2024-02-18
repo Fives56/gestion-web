@@ -32,6 +32,7 @@ import { PieChartComponent } from './components/dashboard/pie-chart/pie-chart.co
 import { NgChartsModule } from 'ng2-charts';
 import { DashboardNumCardChartComponent } from './components/dashboard/dashboard-num-card-chart/dashboard-num-card-chart.component';
 import { SalesComponent } from './components/sales/sales.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
 
 
 
@@ -42,7 +43,8 @@ import { SalesComponent } from './components/sales/sales.component';
     GestionComponent,
     PieChartComponent,
     DashboardNumCardChartComponent,
-    SalesComponent
+    SalesComponent,
+    InventoryComponent
   ],
   imports: [
     MatTooltipModule,

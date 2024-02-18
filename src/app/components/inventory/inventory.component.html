@@ -1,0 +1,34 @@
+<div class="product-container">
+    <mat-card *ngFor="let product of products" class="product-cards">
+
+        <mat-card-header class="card-header">
+            <mat-card-title>{{ product.name }}</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content class="card-content">
+
+            <form class="card-form">
+                <mat-form-field class="edited-quantity">
+                    <mat-label>Precio</mat-label>
+                    <input matInput type="number" min="1" [value]="product.price">
+                </mat-form-field>
+
+                <mat-form-field class="edited-quantity">
+                    <mat-label>Cantidad</mat-label>
+                    <input matInput type="number" min="1" [value]="product.amount">
+                </mat-form-field>
+            </form>
+
+        </mat-card-content>
+
+        <mat-card-footer class="card-footer">
+            <button mat-mini-fab color="warn">
+                <mat-icon>delete</mat-icon>
+            </button>
+            <button mat-mini-fab color="primary">
+                <mat-icon>edit</mat-icon>
+            </button>
+        </mat-card-footer>
+
+    </mat-card>
+</div>

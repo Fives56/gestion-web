@@ -1,8 +1,3 @@
-<mat-form-field class="search-input">
-    <mat-label> Buscar </mat-label>
-    <input #searchInput matInput />
-</mat-form-field>
-
 <mat-toolbar class="banner">
     <h2>
         Dashboard
@@ -16,9 +11,9 @@
         <app-pie-chart [months]="months"></app-pie-chart>
     </div>
 
-    <!-- Cards Dayli-Sales -->
+    <!-- Dayli-Sales -->
     <h3 *ngIf="sales.length == 0"> No se han vendido productos hoy </h3>
-    <div class="cards-container" *ngIf="sales.length > 0">
+    <div class="dayli-container" *ngIf="sales.length > 0">
         <app-dashboard-num-card-chart [sales]="sales" [view]="view"></app-dashboard-num-card-chart>
     </div>
 

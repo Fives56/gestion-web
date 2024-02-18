@@ -1,0 +1,37 @@
+.product-container{
+    display: flex;
+}
+
+.product-cards{
+    width: max-content;
+    margin: 10px;
+    padding: 0;
+    background-color: #675cb0;
+}
+
+.product-cards:hover{
+    box-shadow: 3px 3px 10px #171a4a;
+}
+
+.card-header{
+    color: #fff;
+    box-shadow: .5px 1px 2px #171a4a;
+    z-index: 100;
+}
+
+.card-content{
+    background-color: #fff;
+}
+
+.card-form{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-footer{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}

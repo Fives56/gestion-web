@@ -2,14 +2,6 @@
     box-sizing: border-box;
 }
 
-.search-input{
-    position: fixed;
-    z-index: 15;
-    top: .5em;
-    right: 5em; 
-    color: #000;
-}
-
 .banner{
     width: 50%;
     background-color: transparent;
@@ -38,9 +30,8 @@
     display: flex;
     border: none;
     border-bottom: 4px solid #9f90ea;
-
 }
 
-.item-container{
-    display: grid;
+.dayli-container{
+    height: 300px;
 }

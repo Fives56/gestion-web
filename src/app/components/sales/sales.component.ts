@@ -74,8 +74,8 @@ export class SalesComponent implements OnInit {
 
   sell() {
     return this.salesService.sell(this.ticket).subscribe(() => {
+      console.log(this.ticket)
       alert('Se ha realizado correctamente la venta');
-
       this.stepper.previous();
       this.ticket = {};
       this.linear = true;
@@ -90,7 +90,6 @@ export class SalesComponent implements OnInit {
       this.productForm.value.product,
       this.productForm.value.quantity
     );
-    console.log(this.ticket);
     this.productForm.reset();
   }
 
